@@ -1,0 +1,30 @@
+.seccion-usuarios {
+	background-color: #f2f4f5;
+	border-radius: 20px;
+	padding-top: 0.5em;
+}
+.color-primario {
+	color: #fb5265;
+}
+
+.usuario {
+	text-align: center;
+}
+
+.texto-centrado {
+	text-align: center;
+}
+
+.opcion.flama-activa {
+	color: #fb5265;
+}
+
+.opcion.estrella-activa {
+	color: #ffc400;
+}
+
+#cuadricula-usuarios {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+}
