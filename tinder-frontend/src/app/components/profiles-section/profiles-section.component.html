@@ -1,7 +1,7 @@
 <div class="seccion-usuarios">
 	<h3 class="color-primario texto-centrado">Usuario Seleccionado</h3>
 	<div id="cuadricula-usuarios" class="color-primario">
-		<div class="usuario" *ngFor="let user of users">
+		<div class="usuario" *ngFor="let user of users" [routerLink]="['/home', user.id]">
 			<img [src]="user.imagenPerfil">
 			<div class="etiqueta">{{ user.nombre }}</div>
 		</div>

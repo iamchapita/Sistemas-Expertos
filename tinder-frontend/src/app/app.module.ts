@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfilesSectionComponent } from './components/profiles-section/profiles-section.component';
-import axios from 'axios';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
 	declarations: [
@@ -15,6 +15,7 @@ import axios from 'axios';
 		NavbarComponent,
 		HomeComponent,
 		ProfilesSectionComponent,
+		LoginComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
 	providers: [],
