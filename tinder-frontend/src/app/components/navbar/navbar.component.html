@@ -1,7 +1,7 @@
 <nav>
-	<div id="opcion-usuario" [ngClass]="{'btn-usuario':true, 'active' : isUserActive}" style="width: 60px;">
+	<div id="opcion-usuario" [ngClass]="{'btn-usuario':true, 'active' : isUserActive}" style="width: 60px;"
+		routerLink='/login'>
 		<fa-icon [icon]="faUser" size="xl"></fa-icon>
-		<!-- <a [routerLinkActive]=""></a> -->
 	</div>
 	<div id="botones-nav" style="flex: 1;">
 		<div class="selector-botones">
