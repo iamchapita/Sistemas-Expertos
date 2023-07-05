@@ -70,13 +70,6 @@ app.get("/users/:id/matches", (req, res) => {
 
 	if (user) {
 		let matches = users.filter((user) => user.matches.includes(id));
-		matches = matches.map((item) => {
-			const u = { ...item };
-			delete u.matches;
-			delete u.likes;
-			delete u.intereses;
-			return u;
-		});
 		res.json(matches);
 	} else {
 		res.status(404).send("User not found");
