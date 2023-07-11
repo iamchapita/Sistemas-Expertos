@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfilesSectionComponent } from './components/profiles-section/profiles-section.component';
 import { LoginComponent } from './pages/login/login.component';
+import { InterestsComponent } from './components/interests/interests.component';
 
 @NgModule({
 	declarations: [
@@ -16,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 		HomeComponent,
 		ProfilesSectionComponent,
 		LoginComponent,
+		InterestsComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
 	providers: [],
