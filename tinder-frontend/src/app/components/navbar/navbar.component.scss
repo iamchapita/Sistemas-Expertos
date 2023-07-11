@@ -99,3 +99,18 @@ nav {
 .opcion.estrella-activa {
 	color: #ffc400;
 }
+
+.logo-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px 0;
+}
+
+.logo-section img {
+	width: 150px;
+}
+
+.hide {
+	display: none;
+}

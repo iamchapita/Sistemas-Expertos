@@ -18,6 +18,6 @@
 	<div style="width: 60px;">
 	</div>
 </nav>
-<section class="logo-section">
+<section [ngClass]="{'logo-section':true, 'hide' : isStarActive || isFireActive}">
 	<img src="assets/img/tinder-logo.png">
 </section>
