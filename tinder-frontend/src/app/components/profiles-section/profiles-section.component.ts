@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AxiosServiceService } from 'src/app/axios-service.service';
+import { AxiosServiceService } from '../../services/axios-service.service';
 import { Users } from 'src/app/models/user.model';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios, { AxiosInstance } from 'axios';
-import { Users } from './models/user.model';
+import { Users } from '../models/user.model';
 
 @Injectable({
 	providedIn: 'root',
