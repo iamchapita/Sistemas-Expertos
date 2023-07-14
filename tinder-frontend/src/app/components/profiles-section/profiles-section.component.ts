@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AxiosServiceService } from '../../services/axios-service.service';
+import { AxiosService } from '../../services/axios-service.service';
 import { Users } from 'src/app/models/user.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Users } from 'src/app/models/user.model';
 	styleUrls: ['./profiles-section.component.scss'],
 })
 export class ProfilesSectionComponent implements OnInit {
-	constructor(private service: AxiosServiceService) {}
+	constructor(private service: AxiosService) {}
 	users: Users[] = [];
 
 	ngOnInit(): void {
