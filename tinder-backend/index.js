@@ -8,15 +8,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/users", (req, res) => {
-	const usersResponse = users.map((user) => {
-		const u = { ...user };
-		delete u.matches;
-		delete u.likes;
-		delete u.intereses;
-		delete u.edad;
-		return u;
-	});
-	res.send(usersResponse);
+	res.send(users);
 });
 
 app.get("/users/:id", (req, res) => {
