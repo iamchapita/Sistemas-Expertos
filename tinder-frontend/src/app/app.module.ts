@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfilesSectionComponent } from './components/profiles-section/profiles-section.component';
 import { LoginComponent } from './pages/login/login.component';
 import { InterestsComponent } from './components/interests/interests.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { InterestsComponent } from './components/interests/interests.component';
 		ProfilesSectionComponent,
 		LoginComponent,
 		InterestsComponent,
+  FooterComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
 	providers: [],
