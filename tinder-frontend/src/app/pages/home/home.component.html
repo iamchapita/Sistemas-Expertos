@@ -1,5 +1,8 @@
 <app-navbar [isUserActive]="isUserActive" [isFireActive]="isFireActive" [isStarActive]="isStarActive"></app-navbar>
 
-<ng-container *ngFor="let user of users">
-	<app-interests *ngIf="isFireActive" [user]="user"></app-interests>
+<ng-container *ngIf="isFireActive">
+	<ng-container *ngFor="let user of users">
+		<app-interests *ngIf="isFireActive && user.id === activeUserId" [user]="user"></app-interests>
+	</ng-container>
+	<app-footer (previousUser)="showPreviousUser()" (nextUser)="showNextUser()"></app-footer>
 </ng-container>

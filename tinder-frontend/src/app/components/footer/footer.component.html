@@ -1,1 +1,11 @@
-<p>footer works!</p>
+<footer>
+	<div (click)="previousUser.emit()">
+		<fa-icon [icon]="faCircleChevronLeft" size="xl"></fa-icon>
+	</div>
+	<div class="boton-corazon" id="boton-corazon">
+		<fa-icon [icon]="faHeart" size="xl"></fa-icon>
+	</div>
+	<div (click)="nextUser.emit()">
+		<fa-icon [icon]="faCircleChevronRight" size="xl"></fa-icon>
+	</div>
+</footer>
