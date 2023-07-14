@@ -1,0 +1,53 @@
+.perfil {
+	height: 80vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.perfil .nombre {
+	font-size: 2.3rem;
+	font-weight: 700;
+	margin-right: 10px;
+}
+
+.perfil .icono-check {
+	color: #2e8cf7;
+	font-size: 1.4rem;
+	background-color: #fff;
+	border-radius: 35px;
+	height: 33px;
+	width: 30px;
+	padding: 2px 5px;
+	margin-right: 10px;
+}
+
+.perfil .edad {
+	font-size: 1.2rem;
+	margin-right: 10px;
+}
+
+.contenedor-gustos {
+	display: flex;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+.informacion-perfil {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border-radius: 20px;
+	padding: 10px 20px;
+	margin: 10px;
+}
+
+.item-gusto {
+	border: 2px solid #fff;
+	border-radius: 25px;
+	padding: 5px 15px;
+}

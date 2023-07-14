@@ -1,1 +1,32 @@
-<p>{{id}}</p>
+<div class="perfil" [style.background-image]="'url(' + user.imagenPortada + ')'">
+	<div class="informacion-perfil">
+		<div>
+			<span class="nombre">{{user.nombre}}</span>
+
+			<ng-container *ngIf="user.verificado; else notVerified">
+				<span class="icono-check">
+					<fa-icon [icon]="faCircleCheck" size="xl"></fa-icon>
+				</span>
+			</ng-container>
+			<ng-template #notVerified>
+				<!-- Si el usuario no está verificado, no se muestra nada -->
+			</ng-template>
+
+		</div>
+		<div>
+			<span>
+				<fa-icon [icon]="faBriefcase" size="xl"></fa-icon>
+			</span>
+			<span>{{user.ocupacion}}</span>
+		</div>
+		<div>
+			<span><fa-icon [icon]="faLocationDot" size="xl"></fa-icon></span>
+			<span>{{user.ciudad}}</span>
+		</div>
+		<div class="contenedor-gustos">
+			<div *ngFor="let interes of user.intereses" class="gusto">
+				<div class="item-gusto">{{interes}}</div>
+			</div>
+		</div>
+	</div>
+</div>

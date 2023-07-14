@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Users } from 'src/app/models/user.model';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
 	selector: 'app-interests',
 	templateUrl: './interests.component.html',
 	styleUrls: ['./interests.component.scss'],
 })
-export class InterestsComponent implements OnInit {
-	id: string | null;
+export class InterestsComponent {
+	@Input() user: Users;
 	showInterests: boolean = true;
 
-	constructor(private router: ActivatedRoute) {}
-
-	ngOnInit(): void {
-		this.id = this.router.snapshot.paramMap.get('id');
-	}
+	faCircleCheck = faCircleCheck;
+	faLocationDot = faLocationDot;
+	faBriefcase = faBriefcase;
 }
