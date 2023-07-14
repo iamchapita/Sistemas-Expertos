@@ -5,7 +5,7 @@ import { Users } from '../models/user.model';
 @Injectable({
 	providedIn: 'root',
 })
-export class AxiosServiceService {
+export class AxiosService {
 	private apiUrl = 'http://localhost:3000/';
 	private axiosInstance: AxiosInstance;
 
@@ -26,4 +26,5 @@ export class AxiosServiceService {
 			throw error;
 		}
 	}
+
 }
