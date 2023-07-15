@@ -1,4 +1,11 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import {
+	Component,
+	Output,
+	EventEmitter,
+	Input,
+	OnChanges,
+	SimpleChanges,
+} from '@angular/core';
 import {
 	faHeart,
 	faCircleChevronLeft,
@@ -10,16 +17,19 @@ import {
 	templateUrl: './footer.component.html',
 	styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent {
+export class FooterComponent implements OnChanges {
 	faHeart = faHeart;
 	faCircleChevronLeft = faCircleChevronLeft;
 	faCircleChevronRight = faCircleChevronRight;
 	@Input() activeUserId: number;
+	@Input() isLiked: boolean = false;
 
 	@Output() previousUser: EventEmitter<void> = new EventEmitter<void>();
 	@Output() nextUser: EventEmitter<void> = new EventEmitter<void>();
 
+	ngOnChanges(changes: SimpleChanges): void {}
+
 	onHeartButtonClick(): void {
-		console.log(this.activeUserId);
+		this.isLiked = !this.isLiked;
 	}
 }

@@ -4,5 +4,5 @@
 	<ng-container *ngFor="let user of users">
 		<app-interests *ngIf="isFireActive && user.id === activeUserId" [user]="user"></app-interests>
 	</ng-container>
-	<app-footer [activeUserId]="activeUserId" (previousUser)="showPreviousUser()" (nextUser)="showNextUser()"></app-footer>
+	<app-footer [activeUserId]="activeUserId" [isLiked]="isLiked" (previousUser)="showPreviousUser()" (nextUser)="showNextUser()"></app-footer>
 </ng-container>
