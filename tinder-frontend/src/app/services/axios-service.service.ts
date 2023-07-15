@@ -27,4 +27,12 @@ export class AxiosService {
 		}
 	}
 
+	public async updateUser(id: string | number, user: Users) {
+		try {
+			const response = await this.axiosInstance.put(`users/${id}`, user);
+			return response.data;
+		} catch (error) {
+			throw error;
+		}
+	}
 }

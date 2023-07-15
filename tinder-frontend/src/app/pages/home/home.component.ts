@@ -46,8 +46,18 @@ export class HomeComponent implements OnInit {
 
 				this.ids = this.users.map((user: Users) => user.id);
 				this.activeUserId = this.ids[0];
-				// console.log(this.user);
 				this.setIsLiked();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+
+	storeLikes(user: Users): void {
+		this.service
+			.updateUser(this.user.id, this.user)
+			.then((response) => {
+				console.log(response);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -93,5 +103,6 @@ export class HomeComponent implements OnInit {
 		} else {
 			this.isLiked = false;
 		}
+		this.storeLikes(this.user);
 	}
 }
