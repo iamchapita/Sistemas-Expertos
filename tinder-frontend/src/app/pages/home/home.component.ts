@@ -73,6 +73,7 @@ export class HomeComponent implements OnInit {
 			this.user.likes.push(this.activeUserId);
 			this.isLiked = true;
 		}
+		this.storeLikes(this.user);
 	}
 
 	showPreviousUser(): void {
@@ -103,6 +104,5 @@ export class HomeComponent implements OnInit {
 		} else {
 			this.isLiked = false;
 		}
-		this.storeLikes(this.user);
 	}
 }

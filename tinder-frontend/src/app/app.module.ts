@@ -10,6 +10,7 @@ import { ProfilesSectionComponent } from './components/profiles-section/profiles
 import { LoginComponent } from './pages/login/login.component';
 import { InterestsComponent } from './components/interests/interests.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatchesSectionComponent } from './components/matches-section/matches-section.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 		LoginComponent,
 		InterestsComponent,
   FooterComponent,
+  MatchesSectionComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
 	providers: [],
