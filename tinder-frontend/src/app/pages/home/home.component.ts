@@ -9,19 +9,19 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss'],
-	providers: [NavbarComponent, FooterComponent],
+	providers: [],
 })
 export class HomeComponent implements OnInit {
 	id: string | null;
 	isUserActive: boolean = false;
 	isFireActive: boolean = true;
 	isStarActive: boolean = false;
-	isLiked: boolean = false;
 	users: Users[] = [];
 	user: Users;
 	ids: number[] = [];
 	activeUserId: number;
 	iterator: number = 0;
+	isLiked: boolean = false;
 
 	constructor(private route: ActivatedRoute, private service: AxiosService) {}
 
@@ -46,12 +46,23 @@ export class HomeComponent implements OnInit {
 
 				this.ids = this.users.map((user: Users) => user.id);
 				this.activeUserId = this.ids[0];
-				console.log(this.user);
+				// console.log(this.user);
 				this.setIsLiked();
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+	}
+
+	onLikeButton(): void {
+		const index = this.user.likes.indexOf(this.activeUserId);
+		if (index !== -1) {
+			this.user.likes.splice(index, 1);
+			this.isLiked = false;
+		} else {
+			this.user.likes.push(this.activeUserId);
+			this.isLiked = true;
+		}
 	}
 
 	showPreviousUser(): void {

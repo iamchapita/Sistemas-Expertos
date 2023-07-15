@@ -2,7 +2,7 @@
 	<div (click)="previousUser.emit()">
 		<fa-icon [icon]="faCircleChevronLeft" size="xl"></fa-icon>
 	</div>
-	<div [ngClass]="{'boton-corazon':true, 'liked' : isLiked}" (click)="onHeartButtonClick()">
+	<div [ngClass]="{'boton-corazon':true, 'liked' : isLiked}" (click)="onHeartButtonClick.emit()">
 		<fa-icon [icon]="faHeart" size="xl"></fa-icon>
 	</div>
 	<div (click)="nextUser.emit()">
