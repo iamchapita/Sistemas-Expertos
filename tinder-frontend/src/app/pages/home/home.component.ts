@@ -105,4 +105,11 @@ export class HomeComponent implements OnInit {
 			this.isLiked = false;
 		}
 	}
+
+	// Cambio de Sección
+
+	onSectionButtonClick(): void {
+		this.isFireActive = !this.isFireActive;
+		this.isStarActive = !this.isStarActive;
+	}
 }

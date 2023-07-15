@@ -1,4 +1,5 @@
-<app-navbar [isUserActive]="isUserActive" [isFireActive]="isFireActive" [isStarActive]="isStarActive"></app-navbar>
+<app-navbar [isUserActive]="isUserActive" [isFireActive]="isFireActive" [isStarActive]="isStarActive"
+	(onSectionClick)="onSectionButtonClick()"></app-navbar>
 
 <ng-container *ngIf="isFireActive">
 	<ng-container *ngFor="let user of users">
@@ -7,4 +8,8 @@
 	<app-footer [activeUserId]="activeUserId" [isLiked]="isLiked" [user]="user" [users]="users"
 		(previousUser)="showPreviousUser()" (nextUser)="showNextUser()"
 		(onHeartButtonClick)="onLikeButton()"></app-footer>
+</ng-container>
+
+<ng-container *ngIf="isStarActive">
+	<app-matches-section></app-matches-section>
 </ng-container>

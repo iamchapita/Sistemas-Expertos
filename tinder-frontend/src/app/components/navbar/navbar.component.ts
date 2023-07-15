@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	Input,
+	OnChanges,
+	Output,
+	SimpleChanges,
+} from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -20,4 +27,6 @@ export class NavbarComponent implements OnChanges {
 	@Input() isUserActive = true;
 	@Input() isFireActive = false;
 	@Input() isStarActive = false;
+
+	@Output() onSectionClick: EventEmitter<void> = new EventEmitter<void>();
 }

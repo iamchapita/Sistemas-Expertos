@@ -5,12 +5,22 @@
 	</div>
 	<div id="botones-nav" style="flex: 1;">
 		<div class="selector-botones">
-			<div id="opcion-activa">
+
+			<div *ngIf="isFireActive" class="opcion-activa" [style.transform]="'translateX(0)'">
+
 			</div>
-			<div id="opcion-perfiles" [ngClass]="{'opcion':true, 'flama-activa' : isFireActive}">
+
+			<div id="opcion-perfiles" (click)="onSectionClick.emit()"
+				[ngClass]="{'opcion':true, 'flama-activa' : isFireActive}">
 				<fa-icon [icon]="faFireFlameCurved" size="xl"></fa-icon>
 			</div>
-			<div id="opcion-matches" [ngClass]="{'opcion':true, 'estrella-activa' : isStarActive}">
+
+			<div *ngIf="isStarActive" class="opcion-activa" [style.transform]="'translateX(90%)'">
+
+			</div>
+
+			<div id="opcion-matches" (click)="onSectionClick.emit()"
+				[ngClass]="{'opcion':true, 'estrella-activa' : isStarActive}">
 				<fa-icon [icon]="faStar" size="xl"></fa-icon>
 			</div>
 		</div>
