@@ -58,9 +58,6 @@ export class HomeComponent implements OnInit {
 			this.iterator = this.ids.length - 1;
 			this.activeUserId = this.ids[this.iterator];
 		}
-		console.log(this.iterator)
-
-		// console.log(this.activeUserId)
 	}
 
 	showNextUser(): void {
@@ -71,7 +68,5 @@ export class HomeComponent implements OnInit {
 			this.iterator = 0;
 			this.activeUserId = this.ids[this.iterator];
 		}
-
-		console.log(this.iterator)
 	}
 }

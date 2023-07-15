@@ -2,7 +2,7 @@
 	<div (click)="previousUser.emit()">
 		<fa-icon [icon]="faCircleChevronLeft" size="xl"></fa-icon>
 	</div>
-	<div class="boton-corazon" id="boton-corazon">
+	<div class="boton-corazon" (click)="onHeartButtonClick()">
 		<fa-icon [icon]="faHeart" size="xl"></fa-icon>
 	</div>
 	<div (click)="nextUser.emit()">
