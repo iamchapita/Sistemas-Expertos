@@ -1,5 +1,8 @@
 <div *ngIf="loggedUser !== undefined">
   <app-navbar [loggedUser]="loggedUser" [id]="id"></app-navbar>
+
+  <app-chat-list [loggedUser]="loggedUser" ></app-chat-list>
+
   <app-bottombar (changeView)="changeView()" [loggedUser]="loggedUser" [isChatActive]="isChatActive"
     [isCallActive]="isCallActive"></app-bottombar>
 </div>
