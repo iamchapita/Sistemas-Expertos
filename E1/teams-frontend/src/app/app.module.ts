@@ -11,9 +11,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BottombarComponent } from './components/bottombar/bottombar.component';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
+import { ChatNavbarComponent } from './components/chat-navbar/chat-navbar.component';
+import { ChatMessageInputComponent } from './components/chat-message-input/chat-message-input.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent, ChatListComponent],
+  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent, ChatListComponent, ChatDetailsComponent, ChatNavbarComponent, ChatMessageInputComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
