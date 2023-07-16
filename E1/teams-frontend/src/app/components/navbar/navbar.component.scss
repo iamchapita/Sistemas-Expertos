@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 10px;
+  align-items: center;
+}
+
+.whiteText {
+  color: white;
+}
+
+.profileImage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profileImage > .whiteText{
+  margin: 1rem;
+  font-style: bold;
+}
+
+.profileImage > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center;
+}

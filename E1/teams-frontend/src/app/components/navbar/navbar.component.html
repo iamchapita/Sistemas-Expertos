@@ -1,0 +1,7 @@
+<nav *ngIf="loggedUser !== undefined">
+  <div class="profileImage">
+    <img [src]="loggedUser.imagen" alt="Fail">
+    <div class="whiteText">{{loggedUser.nombre}}</div>
+  </div>
+  <fa-icon class="whiteText" [icon]="faUserAlt" size="xl"></fa-icon>
+</nav>

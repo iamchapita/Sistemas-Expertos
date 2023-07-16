@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, FormLoginComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, TopbarComponent, NavbarComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
