@@ -3,8 +3,8 @@
     <img [src]="loggedUser.imagen" alt="Fail">
     <div class="whiteText">{{loggedUser.nombre}}</div>
   </div>
-  <div class="accountButon">
-    <fa-icon class="whiteText" [icon]="faUserAlt" size="xl"></fa-icon>
+  <div class="accountButon" routerLink='/login' >
+    <fa-icon class="whiteText" [icon]="faUserAlt" size="xl" style="font-size: 15  px;"></fa-icon>
   </div>
 </nav>
 <div class="searchBar">
