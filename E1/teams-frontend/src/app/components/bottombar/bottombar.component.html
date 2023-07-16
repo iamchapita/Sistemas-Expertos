@@ -1,0 +1,18 @@
+<footer>
+  <div [ngClass]="{'bottomBarButton': true, 'active': isChatActive}" (click)="changeView.emit()">
+    <fa-icon class="whiteText" [icon]="faComment" size="xl"></fa-icon>
+    <p>Chat</p>
+  </div>
+  <div class="bottomBarButton">
+    <fa-icon class="whiteText" [icon]="faPeopleGroup" size="xl"></fa-icon>
+    <p>Teans</p>
+  </div>
+  <div [ngClass]="{'bottomBarButton': true, 'active': isCallActive}" (click)="changeView.emit()">
+    <fa-icon class="whiteText" [icon]="faPhone" size="xl"></fa-icon>
+    <p>Calls</p>
+  </div>
+  <div class="bottomBarButton">
+    <fa-icon class="whiteText" [icon]="faEllipsis" size="xl"></fa-icon>
+    <p>More</p>
+  </div>
+</footer>

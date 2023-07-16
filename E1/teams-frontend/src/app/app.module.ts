@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { ChatComponent } from './pages/chat/chat.component';
-import { TopbarComponent } from './components/topbar/topbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BottombarComponent } from './components/bottombar/bottombar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, TopbarComponent, NavbarComponent],
+  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

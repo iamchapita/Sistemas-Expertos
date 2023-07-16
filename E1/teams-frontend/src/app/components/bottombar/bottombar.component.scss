@@ -1,0 +1,24 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #dddee2;
+  background-color: #2b2b2d;
+  height: 8em;
+}
+
+.bottomBarButton {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.active {
+  color: #5b5fc0;
+}

@@ -8,23 +8,24 @@ import { faUserAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   @Input() id: string | null;
-  loggedUser: any;
+  @Input() loggedUser: any;
   faUserAlt = faUserAlt;
 
   ngOnInit(): void {
-    this.getUserDetails();
+    // console.log(this.loggedUser);
+    // this.getUserDetails();
   }
 
-  async getUserDetails() {
-    let response = await fetch(`http://localhost:3000/usuarios/${this.id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  // async getUserDetails() {
+  //   let response = await fetch(`http://localhost:3000/usuarios/${this.id}`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
 
-    let responseJSON = await response.json();
-    this.loggedUser = responseJSON;
-    console.log(this.loggedUser);
-  }
+  //   let responseJSON = await response.json();
+  //   this.loggedUser = responseJSON;
+  //   console.log(this.loggedUser);
+  // }
 }
