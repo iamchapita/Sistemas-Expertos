@@ -1,0 +1,42 @@
+#logo {
+  height: 200px;
+  width: 200px;
+}
+
+.form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  left: 0;
+  top: 25%;
+}
+
+input {
+  margin-top: 0.5rem;
+  background-color: #2b2b2d;
+  border-color: rgb(173, 173, 173);
+  color: rgb(173, 173, 173);
+  border-radius: 30px;
+  border-width: 1px;
+  padding: 5px;
+}
+
+button {
+  margin-top: 1.5rem;
+  background-color: #5b5fc0;
+  border-color: #5b5fc0;
+  border-radius: 30px;
+  border-width: 1px;
+  padding: 5px;
+  color: white;
+  font-style: bold;
+  width: 162px;
+}
+
+.inputWidth {
+  width: 150px;
+}
