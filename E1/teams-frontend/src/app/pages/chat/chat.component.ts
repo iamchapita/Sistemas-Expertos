@@ -8,9 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ChatComponent implements OnInit {
   loggedUser: any;
+  users: any;
   id: string | null;
   isChatActive: boolean;
   isCallActive: boolean;
+  areImagesAdded: boolean;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -30,7 +32,36 @@ export class ChatComponent implements OnInit {
 
     let responseJSON = await response.json();
     this.loggedUser = responseJSON;
-    console.log(this.loggedUser);
+    this.getUsers();
+  }
+
+  async getUsers() {
+    let response = await fetch('http://localhost:3000/usuarios/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    let responseJSON = await response.json();
+    this.users = responseJSON;
+    this.addProfilePic();
+    // console.log(this.users);
+  }
+
+  addProfilePic(): void {
+    this.loggedUser.conversaciones.forEach((conversacion: any) => {
+      if (conversacion.tipo === 'individual') {
+        const user = this.users.find(
+          (user: any) => user.nombre === conversacion.nombreDestinatario
+        );
+        if (user) {
+          conversacion.imagenDestinatario = user.imagen;
+        }
+      }
+    });
+
+    this.areImagesAdded = true;
   }
 
   changeView(): void {

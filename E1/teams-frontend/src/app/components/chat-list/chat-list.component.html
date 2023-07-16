@@ -1,10 +1,14 @@
-<div class="chatList">
+<div class="chatList" *ngIf="areImagesAdded">
   <ng-container *ngFor="let chat of loggedUser.conversaciones">
     <div class="chat" *ngIf="chat.tipo === 'individual'">
+
       <div class="chatUser">
+
         <div class="profileImage">
-          <img [src]="loggedUser.imagen" alt="Fail">
+          <img *ngIf="chat.imagenDestinatario" [src]="chat.imagenDestinatario" alt="Fail">
+          <div class="whiteText noImage" *ngIf="!chat.imagenDestinatario">{{ chat.nombreDestinatario }}</div>
         </div>
+
         <div class="chatUserMessage">
           <div class="whiteText chatNameList">{{chat.nombreDestinatario}}</div>
           <div class="lastMessage">{{ chat.ultimoMensaje }}</div>

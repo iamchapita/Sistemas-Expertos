@@ -7,4 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ChatListComponent {
   @Input() loggedUser: any;
+  @Input() users: any;
+  @Input() areImagesAdded: boolean = false;
 }
