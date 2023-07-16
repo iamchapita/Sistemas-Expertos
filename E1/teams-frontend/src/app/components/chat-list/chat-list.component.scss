@@ -46,7 +46,8 @@
   background-position: center;
 }
 
-.profileImage > div {
+
+.profileImage > .noImage {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -55,3 +56,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.profileImage > .groupChat {
+  background-color: #5b5fc0;;
+}
+
