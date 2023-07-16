@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -7,6 +8,7 @@ const conversaciones = require('./data/conversaciones.json');
 const grupos = require('./data/grupos.json');
 
 app.use(express.json());
+app.use(cors());
 
 // Endpoint para obtener todos los usuarios
 app.get('/usuarios', (req, res) => {
