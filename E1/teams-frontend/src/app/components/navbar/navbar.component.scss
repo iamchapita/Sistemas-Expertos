@@ -15,7 +15,7 @@ nav {
   align-items: center;
 }
 
-.profileImage > .whiteText{
+.profileImage > .whiteText {
   margin: 1rem;
   font-style: bold;
 }
@@ -25,4 +25,21 @@ nav {
   height: 40px;
   border-radius: 50%;
   background-position: center;
+}
+
+.accountButon {
+  margin: 1rem;
+}
+
+.searchBar {
+  width: 100%;
+}
+
+.searchBar > input {
+  background-color: #2b2b2d;
+  color: white;
+  padding: 5px;
+  border-width: 0;
+  border-radius: 5px;
+  width: 98%;
 }
