@@ -20,7 +20,10 @@ app.post('/login', (req, res) => {
   const { usuario, contrasena } = req.body;
   const usuarioEncontrado = usuarios.find(user => user.nombre === usuario && user.contrasena === contrasena);
   if (usuarioEncontrado) {
-    res.json({ exito: true, mensaje: 'Inicio de sesión exitoso' });
+    let u = {...usuarioEncontrado};
+    delete u.contrasena;
+    delete u.conversaciones;
+    res.json({ exito: true, mensaje: 'Inicio de sesión exitoso', usuario: u });
   } else {
     res.status(401).json({ exito: false, mensaje: 'Credenciales inválidas' });
   }

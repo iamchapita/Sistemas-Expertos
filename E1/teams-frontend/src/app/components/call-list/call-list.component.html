@@ -1,4 +1,8 @@
-<div class="chatList" *ngIf="areImagesAdded && isChatActive">
+<div *ngIf="isCallActive">
+  <p class="whiteText">Hola</p>
+</div>
+
+<!-- <div class="chatList" *ngIf="areImagesAdded && isChatActive">
   <ng-container *ngFor="let chat of loggedUser.conversaciones">
     <div class="chat"  [routerLink]="['/chatDetails', chat.idConversacion, chat.nombreDestinatario]">
       <div class="chatUser">
@@ -15,4 +19,4 @@
       <div class="whiteText time">{{ chat.horaUltimoMensaje }}</div>
     </div>
   </ng-container>
-</div>
+</div> -->

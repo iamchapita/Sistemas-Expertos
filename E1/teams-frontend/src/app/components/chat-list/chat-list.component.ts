@@ -7,6 +7,7 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./chat-list.component.scss'],
 })
 export class ChatListComponent {
+  @Input() isChatActive: any;
   @Input() loggedUser: any;
   @Input() users: any;
   @Input() areImagesAdded: boolean = false;

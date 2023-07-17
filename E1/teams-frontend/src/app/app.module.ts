@@ -14,9 +14,10 @@ import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
 import { ChatNavbarComponent } from './components/chat-navbar/chat-navbar.component';
 import { ChatMessageInputComponent } from './components/chat-message-input/chat-message-input.component';
+import { CallListComponent } from './components/call-list/call-list.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent, ChatListComponent, ChatDetailsComponent, ChatNavbarComponent, ChatMessageInputComponent],
+  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent, ChatListComponent, ChatDetailsComponent, ChatNavbarComponent, ChatMessageInputComponent, CallListComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
