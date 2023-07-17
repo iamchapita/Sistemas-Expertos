@@ -14,10 +14,36 @@ nav {
   align-items: center;
 }
 
-.contactInfo > h2{
+.contactInfo > h2 {
   margin-left: 2rem;
 }
 
 .whiteText {
   color: white;
+}
+
+.profileImage > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center;
+}
+
+.profileImage > img,
+div {
+  margin-left: 1rem;
+}
+
+.profileImage > .noImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImage > .groupChat {
+  background-color: #5b5fc0;
 }

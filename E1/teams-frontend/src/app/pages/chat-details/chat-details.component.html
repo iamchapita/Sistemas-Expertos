@@ -1,2 +1,15 @@
-<app-chat-navbar></app-chat-navbar>
+<app-chat-navbar [receiverName]="receiverName" [receiverImage]="receiverImage"></app-chat-navbar>
+
+<div class="messages">
+
+  <div class="chat-bubble sent whiteText">
+    Mensaje enviado
+  </div>
+
+  <div class="chat-bubble received whiteText">
+    Mensaje recibido
+  </div>
+
+</div>
+
 <app-chat-message-input></app-chat-message-input>

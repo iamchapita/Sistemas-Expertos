@@ -1,4 +1,31 @@
-
 .whiteText {
   color: white;
+}
+
+.messages > .sent .received {
+}
+
+.chat-bubble {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  background-color: red;
+}
+
+.sent {
+  background-color: #2979ff;
+  color: white;
+  float: right;
+}
+
+.received {
+  background-color: #e0e0e0;
+  color: #333;
+  float: left;
+}
+
+.message {
+  margin: 0;
 }

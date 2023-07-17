@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,4 +8,6 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class ChatNavbarComponent {
   faArrowLeft = faArrowLeft;
+  @Input() receiverName: string | null;
+  @Input() receiverImage: string | null;
 }

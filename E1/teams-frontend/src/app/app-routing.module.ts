@@ -14,14 +14,14 @@ const routes: Routes = [
     component: ChatComponent,
   },
   {
-    path: 'chatDetails/:id',
+    path: 'chatDetails/:id/:receiverName',
     component: ChatDetailsComponent,
   },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full',
+  // },
 ];
 
 @NgModule({
