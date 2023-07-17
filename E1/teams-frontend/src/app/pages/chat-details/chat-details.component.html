@@ -2,14 +2,12 @@
 
 <div class="messages">
 
-  <div class="chat-bubble sent whiteText">
-    Mensaje enviado
+  <div class="message" *ngFor="let message of messages">
+    <div
+      [ngClass]="{'chat-bubble whiteText':true, 'received': message.emisor == receiverId, 'sent': message.emisor !== receiverId  }">
+      {{ message.mensaje }}
+    </div>
   </div>
-
-  <div class="chat-bubble received whiteText">
-    Mensaje recibido
-  </div>
-
 </div>
 
 <app-chat-message-input></app-chat-message-input>

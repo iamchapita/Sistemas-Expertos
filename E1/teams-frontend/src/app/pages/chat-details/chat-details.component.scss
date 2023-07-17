@@ -2,30 +2,35 @@
   color: white;
 }
 
-.messages > .sent .received {
+.messages {
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  width: 100%;
+}
+
+.message {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .chat-bubble {
-  display: inline-block;
   padding: 10px;
   border-radius: 20px;
   margin-bottom: 10px;
   max-width: 70%;
-  background-color: red;
 }
 
 .sent {
   background-color: #2979ff;
   color: white;
   float: right;
+  margin-top: 10px;
 }
 
 .received {
   background-color: #e0e0e0;
   color: #333;
   float: left;
-}
-
-.message {
-  margin: 0;
+  margin-top: 10px;
 }

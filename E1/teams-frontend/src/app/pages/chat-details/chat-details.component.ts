@@ -13,6 +13,7 @@ export class ChatDetailsComponent implements OnInit {
   messages: any;
   receiverImage: string;
   receiver: any;
+  receiverId: string;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -39,6 +40,7 @@ export class ChatDetailsComponent implements OnInit {
 
     if (this.receiver) {
       this.receiverImage = this.receiver.imagen;
+      this.receiverId = this.receiver.id;
     }
   }
 
@@ -55,5 +57,8 @@ export class ChatDetailsComponent implements OnInit {
 
     let responseJSON = await response.json();
     this.messages = responseJSON;
+
+    this.messages = this.messages.reverse();
+    console.log(this.messages);
   }
 }
