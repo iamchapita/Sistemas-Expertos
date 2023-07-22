@@ -8,6 +8,8 @@ export class FetchService {
   id: any;
   areImagesAdded: boolean;
   users: any;
+  messages: any;
+
   constructor(private router: Router) {}
 
   // Login
@@ -57,7 +59,7 @@ export class FetchService {
 
     let responseJSON = await response.json();
     this.users = responseJSON;
-    this.addProfilePic();
+    // this.addProfilePic();
   }
 
   addProfilePic(): void {
@@ -73,5 +75,22 @@ export class FetchService {
     });
 
     this.areImagesAdded = true;
+  }
+
+  async getMessages(conversationId: any) {
+    let response = await fetch(
+      `http://localhost:3000/conversaciones/${conversationId}/mensajes`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    let responseJSON = await response.json();
+    this.messages = responseJSON;
+
+    this.messages = this.messages.reverse();
   }
 }

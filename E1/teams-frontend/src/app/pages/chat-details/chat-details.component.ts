@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FetchService } from 'src/app/services/fetch.service';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chat-details',
@@ -7,58 +9,54 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./chat-details.component.scss'],
 })
 export class ChatDetailsComponent implements OnInit {
+  faArrowLeft = faArrowLeft;
   conversationId: string | null;
-  receiverName: string | null;
   users: any;
   messages: any;
-  receiverImage: string;
   receiver: any;
-  receiverId: string;
+  receiverImage: any;
+  receiverId: any;
+  loggedUser: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private fetchService: FetchService
+  ) {}
 
   ngOnInit(): void {
     this.conversationId = this.route.snapshot.paramMap.get('id');
-    this.receiverName = this.route.snapshot.paramMap.get('receiverName');
-    this.getUsers();
+    this.getInitialParameters();
   }
 
-  async getUsers() {
-    let response = await fetch('http://localhost:3000/usuarios/', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  async getInitialParameters() {
+    if (this.fetchService.users === undefined) {
+      await this.fetchService.getUsers();
+      this.users = await this.fetchService.users;
+    }
 
-    let responseJSON = await response.json();
-    this.users = responseJSON;
-    this.getMessages();
+    if (this.fetchService.loggedUser === undefined) {
+      await this.fetchService.getUserDetails(localStorage.getItem('id'));
+      this.loggedUser = await this.fetchService.loggedUser;
+    }
+
+    await this.fetchService.getMessages(this.conversationId);
+    this.users = await this.fetchService.users;
+    this.messages = await this.fetchService.messages;
+    this.loggedUser = await this.fetchService.loggedUser;
+    this.getUserChatUser();
+  }
+
+  getUserChatUser() {
     this.receiver = this.users.find(
-      (user: any) => user.nombre === this.receiverName
+      (user: any) =>
+        user.nombre ===
+        this.loggedUser.conversaciones.find(
+          (c: any) => c.idConversacion == this.conversationId
+        ).nombreDestinatario
     );
-
     if (this.receiver) {
       this.receiverImage = this.receiver.imagen;
       this.receiverId = this.receiver.id;
     }
-  }
-
-  async getMessages() {
-    let response = await fetch(
-      `http://localhost:3000/conversaciones/${this.conversationId}/mensajes`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-
-    let responseJSON = await response.json();
-    this.messages = responseJSON;
-
-    this.messages = this.messages.reverse();
-    console.log(this.messages);
   }
 }

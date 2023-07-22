@@ -29,6 +29,7 @@ export class ChatComponent implements OnInit {
   async getInitialParameters() {
     await this.fetchService.getUserDetails(this.id);
     this.loggedUser = await this.fetchService.loggedUser;
+    this.fetchService.addProfilePic();
     localStorage.setItem('id', this.loggedUser.id);
     this.users = await this.fetchService.users;
     this.areImagesAdded = this.fetchService.areImagesAdded;

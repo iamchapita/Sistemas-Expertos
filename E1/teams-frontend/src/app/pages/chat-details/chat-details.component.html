@@ -1,7 +1,15 @@
-<app-chat-navbar [receiverName]="receiverName" [receiverImage]="receiverImage"></app-chat-navbar>
+<nav *ngIf="receiver">
+  <div class="contactInfo">
+    <fa-icon class="whiteText" [icon]="faArrowLeft" size="xl"></fa-icon>
+    <div class="profileImage">
+      <img *ngIf="receiverImage" [src]="receiverImage">
+      <div class="whiteText noImage" *ngIf="!receiverImage">{{receiver.nombre}}</div>
+    </div>
+    <h2 class="whiteText">{{receiver.nombre}}</h2>
+  </div>
+</nav>
 
 <div class="messages">
-
   <div class="message" *ngFor="let message of messages">
     <div
       [ngClass]="{'chat-bubble whiteText':true, 'received': message.emisor == receiverId, 'sent': message.emisor !== receiverId  }">
