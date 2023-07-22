@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
-import { FormLoginComponent } from './components/form-login/form-login.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -17,7 +16,18 @@ import { ChatMessageInputComponent } from './components/chat-message-input/chat-
 import { CallListComponent } from './components/call-list/call-list.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, FormLoginComponent, ChatComponent, NavbarComponent, BottombarComponent, ChatListComponent, ChatDetailsComponent, ChatNavbarComponent, ChatMessageInputComponent, CallListComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ChatComponent,
+    NavbarComponent,
+    BottombarComponent,
+    ChatListComponent,
+    ChatDetailsComponent,
+    ChatNavbarComponent,
+    ChatMessageInputComponent,
+    CallListComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

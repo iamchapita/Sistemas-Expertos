@@ -1,29 +1,23 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-form-login',
-  templateUrl: './form-login.component.html',
-  styleUrls: ['./form-login.component.scss'],
+@Injectable({
+  providedIn: 'root',
 })
-export class FormLoginComponent {
+export class FetchService {
   constructor(private router: Router) {}
 
-  loginStatus: boolean;
+  // Login
   loggedUser: any;
+  loginStatus: boolean;
 
-  credentials: any = {
-    usuario: '',
-    contrasena: '',
-  };
-
-  async loginAttemp() {
+  async logginAtemp(credentials: any) {
     let response = await fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(this.credentials),
+      body: JSON.stringify(credentials),
     });
 
     let responseJSON = await response.json();
