@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class FetchService {
+  id: any;
+  areImagesAdded: boolean;
+  users: any;
   constructor(private router: Router) {}
 
   // Login
@@ -29,5 +32,46 @@ export class FetchService {
     } else {
       this.router.navigate([`/chat/${this.loggedUser.id}`]);
     }
+  }
+
+  async getUserDetails(id: any) {
+    let response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    let responseJSON = await response.json();
+    this.loggedUser = responseJSON;
+    await this.getUsers();
+  }
+
+  async getUsers() {
+    let response = await fetch('http://localhost:3000/usuarios/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    let responseJSON = await response.json();
+    this.users = responseJSON;
+    this.addProfilePic();
+  }
+
+  addProfilePic(): void {
+    this.loggedUser.conversaciones.forEach((conversacion: any) => {
+      if (conversacion.tipo === 'individual') {
+        const user = this.users.find(
+          (user: any) => user.nombre === conversacion.nombreDestinatario
+        );
+        if (user) {
+          conversacion.imagenDestinatario = user.imagen;
+        }
+      }
+    });
+
+    this.areImagesAdded = true;
   }
 }
