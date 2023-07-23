@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FetchService } from 'src/app/services/fetch.service';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chat-details',
@@ -10,6 +11,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 })
 export class ChatDetailsComponent implements OnInit {
   faArrowLeft = faArrowLeft;
+  faPaperPlane = faPaperPlane;
   conversationId: string | null;
   users: any;
   messages: any;

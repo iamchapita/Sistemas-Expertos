@@ -59,7 +59,6 @@ export class FetchService {
 
     let responseJSON = await response.json();
     this.users = responseJSON;
-    // this.addProfilePic();
   }
 
   addProfilePic(): void {
@@ -90,7 +89,6 @@ export class FetchService {
 
     let responseJSON = await response.json();
     this.messages = responseJSON;
-
     this.messages = this.messages.reverse();
   }
 }

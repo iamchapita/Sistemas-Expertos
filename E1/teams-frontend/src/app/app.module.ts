@@ -11,7 +11,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BottombarComponent } from './components/bottombar/bottombar.component';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
-import { ChatMessageInputComponent } from './components/chat-message-input/chat-message-input.component';
 import { CallListComponent } from './components/call-list/call-list.component';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { CallListComponent } from './components/call-list/call-list.component';
     BottombarComponent,
     ChatListComponent,
     ChatDetailsComponent,
-    ChatMessageInputComponent,
     CallListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
