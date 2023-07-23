@@ -89,6 +89,23 @@ export class FetchService {
 
     let responseJSON = await response.json();
     this.messages = responseJSON;
-    this.messages = this.messages.reverse();
+
+    // console.log(this.messages)
+
+    // this.messages = this.messages.reverse();
+  }
+
+  async sendMessage(message: any) {
+    let response = await fetch('http://localhost:3000/mensajes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+
+    let responseJSON = await response.json();
+
+    console.log(responseJSON);
   }
 }

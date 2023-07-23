@@ -19,6 +19,13 @@ export class ChatDetailsComponent implements OnInit {
   receiverImage: any;
   receiverId: any;
   loggedUser: any;
+  message: any = {
+    idConversacion: '',
+    emisor: '',
+    receptor: '',
+    mensaje: '',
+    hora: '',
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +53,16 @@ export class ChatDetailsComponent implements OnInit {
     this.messages = await this.fetchService.messages;
     this.loggedUser = await this.fetchService.loggedUser;
     this.getUserChatUser();
+
+    if (this.conversationId !== null) {
+      this.message = {
+        idConversacion: parseInt(this.conversationId),
+        emisor: parseInt(this.loggedUser.id),
+        receptor: parseInt(this.receiver.id),
+        mensaje: '',
+        hora: '',
+      };
+    }
   }
 
   getUserChatUser() {
@@ -60,5 +77,20 @@ export class ChatDetailsComponent implements OnInit {
       this.receiverImage = this.receiver.imagen;
       this.receiverId = this.receiver.id;
     }
+  }
+
+  async sendMenssage() {
+    let now = new Date();
+    let formattedTime = now.toLocaleString('es-HN', {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    });
+
+    this.message.hora = formattedTime;
+    await this.fetchService.sendMessage(this.message);
+    this.message.mensaje = '';
+    await this.fetchService.getMessages(this.conversationId);
+    this.messages = await this.fetchService.messages;
   }
 }
