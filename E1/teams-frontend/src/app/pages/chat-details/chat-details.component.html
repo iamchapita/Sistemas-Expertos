@@ -1,6 +1,8 @@
 <nav *ngIf="receiver">
   <div class="contactInfo">
-    <fa-icon class="whiteText" [icon]="faArrowLeft" size="xl"></fa-icon>
+    <div [routerLink]="['/chat', loggedUser.id]">
+      <fa-icon class="whiteText" [icon]="faArrowLeft" size="xl"></fa-icon>
+    </div>
     <div class="profileImage">
       <img *ngIf="receiverImage" [src]="receiverImage">
       <div class="whiteText noImage" *ngIf="!receiverImage">{{receiver.nombre}}</div>
