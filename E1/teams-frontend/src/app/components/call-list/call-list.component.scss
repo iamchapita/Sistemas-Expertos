@@ -1,3 +1,58 @@
 .whiteText {
   color: white;
 }
+.grayText {
+  color: gray;
+}
+
+.call {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chatUser {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.profileImage > .noImage {
+  background-color: beige;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-1{
+  padding: 1em;
+}
+
+.pl-1{
+  padding-left: 1em;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  padding-left: 2em;
+  // margin-right: 1em;
+}
+
+.center{
+  margin: auto;
+}

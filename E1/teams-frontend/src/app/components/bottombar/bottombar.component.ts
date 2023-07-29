@@ -14,6 +14,7 @@ import {
 export class BottombarComponent {
   @Input() loggedUser: any;
   @Input() isChatActive: boolean;
+  @Input() isGroupActive: boolean;
   @Input() isCallActive: boolean;
 
   faComment = faComment;
@@ -21,5 +22,9 @@ export class BottombarComponent {
   faPhone = faPhone;
   faEllipsis = faEllipsis;
 
-  @Output() changeView: EventEmitter<void> = new EventEmitter<void>();
+  @Output() changeView: EventEmitter<any> = new EventEmitter<any>();
+
+  change( id: any ){
+    this.changeView.emit( id );
+  }
 }

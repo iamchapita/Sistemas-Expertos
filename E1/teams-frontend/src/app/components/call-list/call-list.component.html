@@ -1,3 +1,22 @@
 <div *ngIf="isCallActive">
-  <p class="whiteText">Hola</p>
+  <div class="call" *ngFor="let call of calls">
+    <div class="chatUser">
+      <div class="profileImage">
+        <div *ngIf="!call.image" class="noImage">
+          {{ call.name[0] }}
+        </div>
+      </div>
+      <div class="column">
+        <b class="whiteText p-1">{{ call.name }}</b>
+        <div class="grayText info">
+          <fa-icon [icon]="getIcon(call)" ></fa-icon>
+          <span class="pl-1">{{ call.minutesAgo }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="grayText time column info">
+      <small>{{ call.time }}</small>
+      <fa-icon [icon]="faCircleInfo" class="center"></fa-icon>
+    </div>
+  </div>
 </div>

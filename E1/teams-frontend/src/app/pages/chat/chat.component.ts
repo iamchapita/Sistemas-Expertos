@@ -13,6 +13,7 @@ export class ChatComponent implements OnInit {
   id: string | null;
   isChatActive: boolean;
   isCallActive: boolean;
+  isGroupActive: boolean;
   areImagesAdded: boolean;
 
   constructor(
@@ -35,8 +36,25 @@ export class ChatComponent implements OnInit {
     this.areImagesAdded = this.fetchService.areImagesAdded;
   }
 
-  changeView(): void {
-    this.isChatActive = !this.isChatActive;
-    this.isCallActive = !this.isCallActive;
+  changeView(id:any): void {
+    console.log(id);
+    if(id === 1){
+      this.isChatActive = true;
+      this.isGroupActive = false;
+      this.isCallActive = false;
+      return;
+    }
+    if(id === 2){
+      this.isChatActive = false;
+      this.isGroupActive = true;
+      this.isCallActive = false;
+      return;
+    }
+    if(id === 3){
+      this.isChatActive = false;
+      this.isGroupActive = false;
+      this.isCallActive = true;
+      return;
+    }
   }
 }

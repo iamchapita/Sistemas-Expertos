@@ -12,6 +12,7 @@ import { BottombarComponent } from './components/bottombar/bottombar.component';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
 import { CallListComponent } from './components/call-list/call-list.component';
+import { GroupListComponent } from './components/group-list/group-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CallListComponent } from './components/call-list/call-list.component';
     ChatListComponent,
     ChatDetailsComponent,
     CallListComponent,
+    GroupListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],

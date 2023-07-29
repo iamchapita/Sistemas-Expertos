@@ -108,4 +108,16 @@ export class FetchService {
 
     console.log(responseJSON);
   }
+
+  getGroups(){
+    let grupos: any = []
+    this.loggedUser.conversaciones.forEach((conversacion: any) => {
+      if (conversacion.tipo === 'grupal') {
+        grupos.push(conversacion)
+      }
+    });
+    console.log(grupos)
+    return grupos;
+  }
+  
 }
