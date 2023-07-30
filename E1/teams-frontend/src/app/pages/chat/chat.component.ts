@@ -22,9 +22,15 @@ export class ChatComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(this.isChatActive, this.isGroupActive, this.isCallActive);
+
     this.id = this.route.snapshot.paramMap.get('id');
     this.getInitialParameters();
     this.isChatActive = true;
+    this.isGroupActive = false;
+    this.isCallActive = false;
+    console.log(this.isChatActive, this.isGroupActive, this.isCallActive);
+
   }
 
   async getInitialParameters() {
@@ -36,24 +42,28 @@ export class ChatComponent implements OnInit {
     this.areImagesAdded = this.fetchService.areImagesAdded;
   }
 
-  changeView(id:any): void {
-    console.log(id);
-    if(id === 1){
+  changeView(id:any) {
+    
+    
+    if(id == 1){
       this.isChatActive = true;
       this.isGroupActive = false;
       this.isCallActive = false;
+      console.log(this.isChatActive, this.isGroupActive, this.isCallActive);
       return;
     }
-    if(id === 2){
+    if(id == 2){
       this.isChatActive = false;
       this.isGroupActive = true;
       this.isCallActive = false;
+      console.log(this.isChatActive, this.isGroupActive, this.isCallActive);
       return;
     }
-    if(id === 3){
+    if(id == 3){
       this.isChatActive = false;
       this.isGroupActive = false;
       this.isCallActive = true;
+      console.log(this.isChatActive, this.isGroupActive, this.isCallActive);
       return;
     }
   }

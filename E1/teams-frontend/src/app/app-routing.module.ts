@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
+import { GroupDetailsComponent } from './pages/group-details/group-details.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'chatDetails/:id',
     component: ChatDetailsComponent,
   },
+  {
+    path: 'groupDetails/:id',
+    component: GroupDetailsComponent
+  }
   // {
   //   path: '',
   //   redirectTo: 'login',

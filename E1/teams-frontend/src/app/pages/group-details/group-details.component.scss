@@ -1,0 +1,134 @@
+.whiteText {
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  nav {
+    background-color: #2b2b2d;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10%;
+    margin-top: 28%;
+  }
+  
+  .footer {
+    // padding: 10px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #dddee2;
+    background-color: black;
+  }
+  
+  .footer > input {
+    background-color: #2b2b2d;
+    color: white;
+    border-width: 0;
+    border-radius: 5px;
+    width: 73%;
+    padding: 1rem;
+  }
+  
+  .sendBUtton {
+    margin-left: 0;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    overflow: auto;
+    height: 80%;
+  }
+  
+  .messages > * {
+    overflow-wrap: break-word;
+  }
+  
+  .message {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    // padding: 0.5rem;
+  }
+  
+  .chat-bubble {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 70%;
+  }
+  
+  .sent {
+    background-color: #2979ff;
+    color: white;
+    float: right;
+    margin-top: 10px;
+    // align-self: flex-end;
+  }
+  
+  .received {
+    margin-left: .5rem;
+    background-color: #e0e0e0;
+    color: #333;
+    float: left;
+    // margin-top: 10px;
+  }
+  
+  .contactInfo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .contactInfo > h2 {
+    margin-left: 2rem;
+  }
+  
+  .profileImage {
+    // margin-left: 1rem;
+  }
+  
+  .profileImage > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+  }
+  
+  .profileImage > .noImage {
+    background-color: beige;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profileImage > .groupChat {
+    background-color: #5b5fc0;
+  }
+  

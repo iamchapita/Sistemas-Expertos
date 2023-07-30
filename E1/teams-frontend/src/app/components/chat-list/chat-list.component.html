@@ -1,6 +1,6 @@
 <div class="chatList" *ngIf="areImagesAdded && isChatActive">
   <ng-container *ngFor="let chat of loggedUser.conversaciones">
-    <div class="chat" [routerLink]="['/chatDetails', chat.idConversacion]">
+    <div class="chat" [routerLink]="(chat.tipo === 'individual')?['/chatDetails', chat.idConversacion]:['/groupDetails', chat.idGrupo]">
       <div class="chatUser">
         <div class="profileImage">
           <img *ngIf="chat.imagenDestinatario" [src]="chat.imagenDestinatario" alt="Fail">
@@ -10,7 +10,7 @@
             chat.nombreDestinatario }}</div>
         </div>
         <div class="chatUserMessage">
-          <div class="whiteText chatNameList">{{chat.nombreDestinatario}}</div>
+          <div class="whiteText chatNameList"> <b> {{chat.nombreDestinatario}} </b> </div>
           <div class="lastMessage">{{ chat.ultimoMensaje }}</div>
         </div>
       </div>

@@ -1,0 +1,39 @@
+<div class="container">
+
+    <nav >
+      <div class="contactInfo">
+        <div [routerLink]="['/chat', loggedUser.id]">
+          <fa-icon class="whiteText" [icon]="faArrowLeft" size="xl"></fa-icon>
+        </div>
+        <div class="profileImage">
+          <!-- <div class="whiteText noImage" *ngIf="!receiverImage">{{receiver.nombre}}</div> -->
+          <fa-icon class="whiteText noImage groupChat" [icon]="faPeopleGroup"
+            size="xl"></fa-icon>
+        </div>
+        <h2 class="whiteText">{{this.groupName}}</h2>
+      </div>
+    </nav>
+  
+    <div class="scroll-area">
+      <div class="messages">
+        <div class="message" *ngFor="let message of messages">
+            <div class="profileImage" *ngIf="message.emisor.id !== loggedUser.id">
+                <img *ngIf="message.emisor.imagen" [src]="message.emisor.imagen">
+                <div *ngIf="!message.emisor.imagen" class="noImage">{{message.emisor.nombre[0]}}</div>
+            </div>
+            <div
+                [ngClass]="{'chat-bubble whiteText':true, 'received': message.emisor.id !== loggedUser.id, 'sent': message.emisor.id === loggedUser.id  }">
+                {{ message.mensaje }}
+            </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer">
+      <input type="text" placeholder="Search" [(ngModel)]="message.mensaje">
+      <div class=" sendBUtton" (click)="sendMenssage()">
+        <fa-icon class="whiteText" [icon]="faPaperPlane" size="xl"></fa-icon>
+      </div>
+    </div>
+  
+  </div>

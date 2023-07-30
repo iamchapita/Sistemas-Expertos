@@ -15,7 +15,6 @@ export class GroupListComponent implements OnInit{
   groups: any = []
 
   constructor(
-    private route : ActivatedRoute,
     private fetchService: FetchService
   ){}
   ngOnInit(){

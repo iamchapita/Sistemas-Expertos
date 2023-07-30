@@ -9,6 +9,7 @@ export class FetchService {
   areImagesAdded: boolean;
   users: any;
   messages: any;
+  groupMembers: any;
 
   constructor(private router: Router) {}
 
@@ -116,8 +117,52 @@ export class FetchService {
         grupos.push(conversacion)
       }
     });
-    console.log(grupos)
+    // console.log(grupos)
     return grupos;
+  }
+
+  async getGroupMessages(groupId: any){
+    let response = await fetch(
+      `http://localhost:3000/grupos/${ groupId }/mensajes`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    let responseJSON = await response.json();
+    this.messages = responseJSON;
+  }
+
+  async getGroupMembers(groupId: any){
+    let response = await fetch(
+      `http://localhost:3000/grupos/${ groupId }/miembros`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    let responseJSON = await response.json();
+    this.groupMembers = responseJSON;
+  }
+
+  async sendGroupMessage(message: any){
+    let response = await fetch('http://localhost:3000/mensajes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+
+    let responseJSON = await response.json();
+
+    console.log(responseJSON);
   }
   
 }

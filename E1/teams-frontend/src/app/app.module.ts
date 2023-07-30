@@ -13,6 +13,7 @@ import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatDetailsComponent } from './pages/chat-details/chat-details.component';
 import { CallListComponent } from './components/call-list/call-list.component';
 import { GroupListComponent } from './components/group-list/group-list.component';
+import { GroupDetailsComponent } from './pages/group-details/group-details.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GroupListComponent } from './components/group-list/group-list.component
     ChatDetailsComponent,
     CallListComponent,
     GroupListComponent,
+    GroupDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
