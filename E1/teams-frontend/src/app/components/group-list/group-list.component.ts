@@ -9,7 +9,6 @@ import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./group-list.component.scss']
 })
 export class GroupListComponent implements OnInit{
-  @Input() loggedUser: any;
   @Input() isGroupActive: boolean;
   faPeopleGroup = faPeopleGroup;
   groups: any = []

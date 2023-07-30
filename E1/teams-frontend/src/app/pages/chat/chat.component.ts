@@ -43,8 +43,6 @@ export class ChatComponent implements OnInit {
   }
 
   changeView(id:any) {
-    
-    
     if(id == 1){
       this.isChatActive = true;
       this.isGroupActive = false;

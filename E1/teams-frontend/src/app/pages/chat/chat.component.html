@@ -4,9 +4,9 @@
   <app-chat-list [isChatActive]="isChatActive" [loggedUser]="loggedUser"
     [areImagesAdded]="areImagesAdded"></app-chat-list>
 
-  <app-group-list [isGroupActive]="isGroupActive" [loggedUser]="loggedUser"></app-group-list>
-
   <app-call-list [isCallActive]="isCallActive"></app-call-list>
+    
+  <app-group-list [isGroupActive]="isGroupActive"></app-group-list>
     
   <app-bottombar (changeView)="changeView($event)" [loggedUser]="loggedUser" [isChatActive]="isChatActive"
     [isCallActive]="isCallActive" [isGroupActive]="isGroupActive"></app-bottombar>
