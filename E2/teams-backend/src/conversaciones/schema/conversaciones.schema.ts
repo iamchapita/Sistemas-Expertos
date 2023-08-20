@@ -27,8 +27,6 @@ export class Conversaciones {
 	fechaConversacion: Date;
 
 	@Prop({
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "mensajes",
 		default: [],
 	})
 	mensajes: Array<Mensajes>;

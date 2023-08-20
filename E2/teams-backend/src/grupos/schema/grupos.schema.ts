@@ -8,20 +8,16 @@ export class Grupos {
 	@Prop()
 	nombreGrupo: string;
 
-	@Prop({
-		type: [{ type: mongoose.Schema.Types.ObjectId, ref: "usuarios" }],
-		default: [],
-	})
+	@Prop({ default: [] })
 	miembros: Array<Usuarios>;
 
 	@Prop({
-		type: [{ type: mongoose.Schema.Types.ObjectId, ref: "mensajes" }],
 		default: [],
 	})
 	mensajes: Array<Mensajes>;
 }
 
 const GruposSchema = SchemaFactory.createForClass(Grupos);
-const GruposModel = mongoose.model("Gruposs", GruposSchema);
+const GruposModel = mongoose.model("grupos", GruposSchema);
 
 export { GruposSchema, GruposModel };

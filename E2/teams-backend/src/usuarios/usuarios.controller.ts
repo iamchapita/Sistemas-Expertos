@@ -47,7 +47,53 @@ export class UsuariosController {
 	}
 
 	@Get("/:id")
-	getUsuario(@Param("id") id: string): Promise<Usuarios> {
-		return this.usuariosService.getUsuario(id);
+	async getUsuario(@Res() res, @Param("id") id: string): Promise<Usuarios> {
+		const user = await this.usuariosService.getUsuario(id);
+
+		return user !== null
+			? res.status(200).json(user)
+			: res.status(400).json({ mensaje: "Usuario no encontrado" });
+	}
+
+	@Get("/:id/conversaciones")
+	async getConversaciones(
+		@Res() res,
+		@Param("id") id: string
+	): Promise<Usuarios> {
+		const user = await this.usuariosService.getUsuario(id);
+		const users = await this.usuariosService.getUsuarios();
+
+		if (user) {
+			let conversacionesUsuario = user.conversaciones.map(
+				(conversacion) => {
+					if (conversacion.tipo === "individual") {
+						const destinatario = users.find(
+							(user: any) =>
+								(user._id = conversacion.idDestinatario)
+						);
+
+						// console.log(destinatario);
+						return {
+							...conversacion,
+							nombreDestinatario: destinatario.nombre,
+							imagenDestinatario: destinatario.imagen,
+						};
+					} else {
+						// const grupo = grupos.find(
+						// 	(grupo) => grupo.id === conversacion.idGrupo
+						// );
+						// return {
+						// 	...conversacion,
+						// 	nombreDestinatario: grupo.nombreGrupo,
+						// 	imagenDestinatario: null,
+						// };
+					}
+				}
+			);
+
+			return res.status(200).json(conversacionesUsuario);
+		}
+
+		return res.status(400).json({ mensaje: "Usuario no encontrado" });
 	}
 }

@@ -13,10 +13,12 @@ export class Mensajes {
 
 	@Prop({
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "usuarios",
-		required: true,
+		ref: "usuarios"
 	})
 	receptor: Usuarios;
+
+	@Prop({ required: true })
+	mansaje: string;
 
 	@Prop({ type: Date, default: Date.now })
 	hora: Date;
